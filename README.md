@@ -1,1 +1,1 @@
-# Gymshakr-frontend-challenge
+# Gymshark-frontend-challenge
