@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "../../Components/Card/index";
 
-import API_URL from "../../config";
+// import API_URL from "../../config";
 
 function Home() {
   const [info, setInfo] = useState([]);
@@ -9,7 +9,9 @@ function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await fetch(`${API_URL}`);
+      const result = await fetch(
+        ` https://private-922d75-recruitmenttechnicaltest.apiary-mock.com/customexercises/`
+      );
       const data = await result.json();
 
       setInfo(data.exercises);

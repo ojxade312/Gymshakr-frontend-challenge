@@ -11,7 +11,6 @@ function Card({ name, female, male, id }) {
     const id = e.target.id;
     // navigate to the exercise page when clicked
     navigate("/exercise", { state: id });
-    navigate("/exercise", { name: name });
 
     // console.log(id);
   };

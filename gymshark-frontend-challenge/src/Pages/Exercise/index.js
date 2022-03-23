@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import API_URL from "../../config";
+// import API_URL from "../../config";
 
 function Exercise() {
   const location = useLocation();
@@ -11,7 +11,9 @@ function Exercise() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await fetch(`${API_URL}`);
+      const result = await fetch(
+        ` https://private-922d75-recruitmenttechnicaltest.apiary-mock.com/customexercises/`
+      );
       const data = await result.json();
       const index = exercises.find((element) => element.id === id);
       console.log(index);
