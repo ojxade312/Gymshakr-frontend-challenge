@@ -7,7 +7,6 @@ function Exercise() {
   const id = location.state;
   console.log(id);
   const [exercises, setExercises] = useState([]);
-  // const exercise = exercises[0];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,37 +14,24 @@ function Exercise() {
         ` https://private-922d75-recruitmenttechnicaltest.apiary-mock.com/customexercises/`
       );
       const data = await result.json();
-      const index = exercises.find((element) => element.id === id);
-      console.log(index);
 
       setExercises(data.exercises[0]);
-      // console.log(data.exercises[index]);
-
-      //?? if id ==== data.exercises.id
     };
+
     fetchData();
   }, []);
+  // console.log(exercises.transcript.replace(/<\/?[^>]+>/gi, ""));
 
-  // const findItem = (id) => {
-  //   var newItem = exercises.find((x) => x.id === id);
-  //   setExercises(newItem);
-  // };
-  // findItem();
-
+  // function Remove() {
+  //   const removed = exercises.replace(/<\/?[^>]+>/gi, "");
+  //   console.log(removed);
+  // }
   return (
     <ul>
       <p>{id}</p>
       <p>{exercises.name}</p>
       <p>{exercises.bodyAreas}</p>
       <p>{exercises.transcript}</p>
-
-      {/* {exercises.map((x) => {
-        return (
-          <option key={x.id} value={x.id}>
-            {x.name}
-          </option>
-        );
-      })} */}
     </ul>
   );
 }
