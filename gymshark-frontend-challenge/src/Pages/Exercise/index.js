@@ -11,27 +11,26 @@ function Exercise() {
   useEffect(() => {
     const fetchData = async () => {
       const result = await fetch(
-        ` https://private-922d75-recruitmenttechnicaltest.apiary-mock.com/customexercises/`
+        `https://private-922d75-recruitmenttechnicaltest.apiary-mock.com/customexercises/`
       );
       const data = await result.json();
-
-      setExercises(data.exercises[0]);
+      console.log(id);
+      const exercise = data.exercises.find((exercise) => exercise.id === id);
+      console.log(exercise);
+      setExercises(exercise);
     };
 
     fetchData();
   }, []);
-  // console.log(exercises.transcript.replace(/<\/?[^>]+>/gi, ""));
 
-  // function Remove() {
-  //   const removed = exercises.replace(/<\/?[^>]+>/gi, "");
-  //   console.log(removed);
-  // }
+  // console.log(exercises.replace(/<\/?[^>]+>/gi, ""));  removes HTML tags sometimes.
+
   return (
     <ul>
       <p>{id}</p>
       <p>{exercises.name}</p>
       <p>{exercises.bodyAreas}</p>
-      <p>{exercises.transcript}</p>
+      <p dangerouslySetInnerHTML={{ __html: exercises.transcript }}></p>
     </ul>
   );
 }

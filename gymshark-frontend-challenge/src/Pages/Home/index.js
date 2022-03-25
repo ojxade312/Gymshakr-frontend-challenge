@@ -10,7 +10,7 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       const result = await fetch(
-        ` https://private-922d75-recruitmenttechnicaltest.apiary-mock.com/customexercises/`
+        `https://private-922d75-recruitmenttechnicaltest.apiary-mock.com/customexercises/`
       );
       const data = await result.json();
 

@@ -9,9 +9,10 @@ function Card({ name, female, male, id }) {
   // when you click on each card handle click function navigates you yo a different page with the id sent aswell
   const handleClick = (e) => {
     const id = e.target.id;
+
     // navigate to the exercise page when clicked
     navigate("/exercise", { state: id });
-    //&& name
+
     // console.log(id);
   };
 
